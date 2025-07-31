@@ -1,0 +1,484 @@
+2025-07-30 17:05:19,770 - INFO - \U0001f4c5 Job started at: 2025-07-30 17:05:19
+2025-07-30 17:05:19,770 - INFO - === \U0001f680 Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 17:05:19,770 - INFO - \u25b6\ufe0f Running: Scrapy Spider
+2025-07-30 17:05:22,235 - INFO - \u2705 Scrapy Spider completed successfully.
+2025-07-30 17:05:22,235 - INFO - \u25b6\ufe0f Running: JSON to CSV
+2025-07-30 17:05:22,297 - INFO - \u2705 JSON to CSV completed successfully.
+2025-07-30 17:05:22,297 - INFO - \u25b6\ufe0f Running: JSON to XLSX
+2025-07-30 17:05:22,420 - INFO - \u2705 JSON to XLSX completed successfully.
+2025-07-30 17:05:22,420 - INFO - \u2705 All steps completed successfully.
+2025-07-30 17:05:22,420 - INFO - \U0001f6d1 Job ended at: 2025-07-30 17:05:22
+2025-07-30 17:05:22,420 - INFO - ==================================================
+2025-07-30 17:27:02,919 - INFO - \U0001f4c5 Job started at: 2025-07-30 17:27:02
+2025-07-30 17:27:02,944 - INFO - === \U0001f680 Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 17:27:02,944 - INFO - \u25b6\ufe0f Running: Scrapy Spider
+2025-07-30 17:27:05,596 - INFO - \u2705 Scrapy Spider completed successfully.
+2025-07-30 17:27:05,630 - INFO - \u25b6\ufe0f Running: JSON to CSV
+2025-07-30 17:27:05,741 - ERROR - \u274c JSON to CSV failed.
+2025-07-30 17:27:05,750 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 83, in <module>
+    main()
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 64, in main
+    print("\u26a0\ufe0f No new (non-duplicate) records to append.")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-07-30 17:27:05,750 - INFO - \u25b6\ufe0f Running: JSON to XLSX
+2025-07-30 17:27:05,977 - ERROR - \u274c JSON to XLSX failed.
+2025-07-30 17:27:05,977 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_xlsx.py", line 46, in <module>
+    print(f"\u2705 Data written to Excel file: {xlsx_file}")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-07-30 17:27:05,977 - INFO - \u26a0\ufe0f One or more transformation steps failed.
+2025-07-30 17:27:05,977 - INFO - \U0001f6d1 Job ended at: 2025-07-30 17:27:05
+2025-07-30 17:27:05,979 - INFO - ==================================================
+2025-07-30 17:27:48,479 - INFO - \U0001f4c5 Job started at: 2025-07-30 17:27:48
+2025-07-30 17:27:48,479 - INFO - === \U0001f680 Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 17:27:48,479 - INFO - \u25b6\ufe0f Running: Scrapy Spider
+2025-07-30 17:27:50,759 - INFO - \u2705 Scrapy Spider completed successfully.
+2025-07-30 17:27:50,759 - INFO - \u25b6\ufe0f Running: JSON to CSV
+2025-07-30 17:27:50,834 - ERROR - \u274c JSON to CSV failed.
+2025-07-30 17:27:50,834 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 83, in <module>
+    main()
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 75, in main
+    print(f"\u2705 Appended {len(new_records)} new record(s) to CSV.")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-07-30 17:27:50,834 - INFO - \u25b6\ufe0f Running: JSON to XLSX
+2025-07-30 17:27:51,030 - ERROR - \u274c JSON to XLSX failed.
+2025-07-30 17:27:51,030 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_xlsx.py", line 46, in <module>
+    print(f"\u2705 Data written to Excel file: {xlsx_file}")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-07-30 17:27:51,030 - INFO - \u26a0\ufe0f One or more transformation steps failed.
+2025-07-30 17:27:51,030 - INFO - \U0001f6d1 Job ended at: 2025-07-30 17:27:51
+2025-07-30 17:27:51,030 - INFO - ==================================================
+2025-07-30 17:29:38,967 - INFO - \U0001f4c5 Job started at: 2025-07-30 17:29:38
+2025-07-30 17:29:38,969 - INFO - === \U0001f680 Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 17:29:38,969 - INFO - \u25b6\ufe0f Running: Scrapy Spider
+2025-07-30 17:29:41,350 - INFO - \u2705 Scrapy Spider completed successfully.
+2025-07-30 17:29:41,350 - INFO - \u25b6\ufe0f Running: JSON to CSV
+2025-07-30 17:29:41,429 - ERROR - \u274c JSON to CSV failed.
+2025-07-30 17:29:41,429 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 83, in <module>
+    main()
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 75, in main
+    print(f"\u2705 Appended {len(new_records)} new record(s) to CSV.")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-07-30 17:29:41,429 - INFO - \u25b6\ufe0f Running: JSON to XLSX
+2025-07-30 17:29:41,637 - ERROR - \u274c JSON to XLSX failed.
+2025-07-30 17:29:41,637 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_xlsx.py", line 46, in <module>
+    print(f"\u2705 Data written to Excel file: {xlsx_file}")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-07-30 17:29:41,637 - INFO - \u26a0\ufe0f One or more transformation steps failed.
+2025-07-30 17:29:41,640 - INFO - \U0001f6d1 Job ended at: 2025-07-30 17:29:41
+2025-07-30 17:29:41,640 - INFO - ==================================================
+2025-07-30 18:11:23,513 - INFO -  Job started at: 2025-07-30 18:11:23
+2025-07-30 18:11:23,514 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 18:11:23,515 - INFO -  Running: Scrapy Spider
+2025-07-30 18:11:30,044 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 18:11:30,044 - INFO -  Running: JSON to CSV
+2025-07-30 18:11:30,135 - INFO -  JSON to CSV completed successfully.
+2025-07-30 18:11:30,135 - INFO -  Running: JSON to XLSX
+2025-07-30 18:11:30,347 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 18:11:30,347 - INFO -  All steps completed successfully.
+2025-07-30 18:11:30,347 - INFO -  Job ended at: 2025-07-30 18:11:30
+2025-07-30 18:11:30,347 - INFO - ==================================================
+2025-07-30 18:11:47,321 - INFO -  Job started at: 2025-07-30 18:11:47
+2025-07-30 18:11:47,336 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 18:11:47,338 - INFO -  Running: Scrapy Spider
+2025-07-30 18:11:51,914 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 18:11:51,914 - INFO -  Running: JSON to CSV
+2025-07-30 18:11:52,039 - INFO -  JSON to CSV completed successfully.
+2025-07-30 18:11:52,039 - INFO -  Running: JSON to XLSX
+2025-07-30 18:11:52,229 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 18:11:52,229 - INFO -  All steps completed successfully.
+2025-07-30 18:11:52,229 - INFO -  Job ended at: 2025-07-30 18:11:52
+2025-07-30 18:11:52,229 - INFO - ==================================================
+2025-07-30 18:12:57,174 - INFO -  Job started at: 2025-07-30 18:12:57
+2025-07-30 18:12:57,174 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 18:12:57,177 - INFO -  Running: Scrapy Spider
+2025-07-30 18:13:01,066 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 18:13:01,066 - INFO -  Running: JSON to CSV
+2025-07-30 18:13:01,209 - INFO -  JSON to CSV completed successfully.
+2025-07-30 18:13:01,209 - INFO -  Running: JSON to XLSX
+2025-07-30 18:13:01,415 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 18:13:01,415 - INFO -  All steps completed successfully.
+2025-07-30 18:13:01,415 - INFO -  Job ended at: 2025-07-30 18:13:01
+2025-07-30 18:13:01,415 - INFO - ==================================================
+2025-07-30 18:13:41,543 - INFO -  Job started at: 2025-07-30 18:13:41
+2025-07-30 18:13:41,543 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 18:13:41,544 - INFO -  Running: Scrapy Spider
+2025-07-30 18:13:45,159 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 18:13:45,159 - INFO -  Running: JSON to CSV
+2025-07-30 18:13:45,234 - INFO -  JSON to CSV completed successfully.
+2025-07-30 18:13:45,234 - INFO -  Running: JSON to XLSX
+2025-07-30 18:13:45,414 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 18:13:45,414 - INFO -  All steps completed successfully.
+2025-07-30 18:13:45,414 - INFO -  Job ended at: 2025-07-30 18:13:45
+2025-07-30 18:13:45,414 - INFO - ==================================================
+2025-07-30 22:31:47,518 - INFO -  Job started at: 2025-07-30 22:31:47
+2025-07-30 22:31:47,518 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:31:47,518 - INFO -  Running: Scrapy Spider
+2025-07-30 22:31:50,009 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:31:50,009 - INFO -  Running: JSON to CSV
+2025-07-30 22:31:50,076 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:31:50,076 - INFO -  Running: JSON to XLSX
+2025-07-30 22:31:50,314 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:31:50,314 - INFO -  All steps completed successfully.
+2025-07-30 22:31:50,314 - INFO -  Job ended at: 2025-07-30 22:31:50
+2025-07-30 22:31:50,314 - INFO - ==================================================
+2025-07-30 22:33:09,550 - INFO -  Job started at: 2025-07-30 22:33:09
+2025-07-30 22:33:09,550 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:33:09,552 - INFO -  Running: Scrapy Spider
+2025-07-30 22:33:11,648 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:33:11,648 - INFO -  Running: JSON to CSV
+2025-07-30 22:33:11,722 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:33:11,723 - INFO -  Running: JSON to XLSX
+2025-07-30 22:33:11,874 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:33:11,876 - INFO -  All steps completed successfully.
+2025-07-30 22:33:11,876 - INFO -  Job ended at: 2025-07-30 22:33:11
+2025-07-30 22:33:11,876 - INFO - ==================================================
+2025-07-30 22:33:31,629 - INFO -  Job started at: 2025-07-30 22:33:31
+2025-07-30 22:33:31,629 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:33:31,629 - INFO -  Running: Scrapy Spider
+2025-07-30 22:33:32,766 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:33:32,766 - INFO -  Running: JSON to CSV
+2025-07-30 22:33:32,836 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:33:32,836 - INFO -  Running: JSON to XLSX
+2025-07-30 22:33:32,968 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:33:32,968 - INFO -  All steps completed successfully.
+2025-07-30 22:33:32,968 - INFO -  Job ended at: 2025-07-30 22:33:32
+2025-07-30 22:33:32,968 - INFO - ==================================================
+2025-07-30 22:54:31,092 - INFO - 
+=== Starting Scrapy + CSV Job ===
+2025-07-30 22:54:31,092 - INFO - Running Scrapy spider: bankrate_loans
+2025-07-30 22:54:52,145 - INFO - Scrapy spider completed successfully.
+2025-07-30 22:54:52,145 - INFO - Converting JSON to CSV...
+2025-07-30 22:54:52,262 - INFO - JSON to CSV transformation completed.
+2025-07-30 22:54:52,263 - INFO - Job completed.
+2025-07-30 22:55:30,321 - INFO -  Job started at: 2025-07-30 22:55:30
+2025-07-30 22:55:30,321 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:55:30,322 - INFO -  Running: Scrapy Spider
+2025-07-30 22:55:34,651 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:55:34,651 - INFO -  Running: JSON to CSV
+2025-07-30 22:55:34,717 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:55:34,717 - INFO -  Running: JSON to XLSX
+2025-07-30 22:55:34,891 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:55:34,891 - INFO -  All steps completed successfully.
+2025-07-30 22:55:34,891 - INFO -  Job ended at: 2025-07-30 22:55:34
+2025-07-30 22:55:34,891 - INFO - ==================================================
+2025-07-30 22:56:07,501 - INFO -  Job started at: 2025-07-30 22:56:07
+2025-07-30 22:56:07,501 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:56:07,501 - INFO -  Running: Scrapy Spider
+2025-07-30 22:56:12,848 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:56:12,848 - INFO -  Running: JSON to CSV
+2025-07-30 22:56:12,923 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:56:12,924 - INFO -  Running: JSON to XLSX
+2025-07-30 22:56:13,058 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:56:13,058 - INFO -  All steps completed successfully.
+2025-07-30 22:56:13,058 - INFO -  Job ended at: 2025-07-30 22:56:13
+2025-07-30 22:56:13,058 - INFO - ==================================================
+2025-07-30 22:56:23,054 - INFO -  Job started at: 2025-07-30 22:56:23
+2025-07-30 22:56:23,055 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:56:23,055 - INFO -  Running: Scrapy Spider
+2025-07-30 22:56:28,919 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:56:28,920 - INFO -  Running: JSON to CSV
+2025-07-30 22:56:29,016 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:56:29,016 - INFO -  Running: JSON to XLSX
+2025-07-30 22:56:29,228 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:56:29,229 - INFO -  All steps completed successfully.
+2025-07-30 22:56:29,229 - INFO -  Job ended at: 2025-07-30 22:56:29
+2025-07-30 22:56:29,229 - INFO - ==================================================
+2025-07-30 22:56:55,068 - INFO -  Job started at: 2025-07-30 22:56:55
+2025-07-30 22:56:55,068 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:56:55,068 - INFO -  Running: Scrapy Spider
+2025-07-30 22:57:00,170 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:57:00,171 - INFO -  Running: JSON to CSV
+2025-07-30 22:57:00,263 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:57:00,263 - INFO -  Running: JSON to XLSX
+2025-07-30 22:57:00,409 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:57:00,409 - INFO -  All steps completed successfully.
+2025-07-30 22:57:00,409 - INFO -  Job ended at: 2025-07-30 22:57:00
+2025-07-30 22:57:00,409 - INFO - ==================================================
+2025-07-30 22:58:26,146 - INFO -  Job started at: 2025-07-30 22:58:26
+2025-07-30 22:58:26,146 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:58:26,146 - INFO -  Running: Scrapy Spider
+2025-07-30 22:58:29,837 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:58:29,837 - INFO -  Running: JSON to CSV
+2025-07-30 22:58:29,926 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:58:29,926 - INFO -  Running: JSON to XLSX
+2025-07-30 22:58:30,063 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:58:30,063 - INFO -  All steps completed successfully.
+2025-07-30 22:58:30,063 - INFO -  Job ended at: 2025-07-30 22:58:30
+2025-07-30 22:58:30,063 - INFO - ==================================================
+2025-07-30 22:58:51,886 - INFO -  Job started at: 2025-07-30 22:58:51
+2025-07-30 22:58:51,886 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:58:51,886 - INFO -  Running: Scrapy Spider
+2025-07-30 22:58:55,553 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:58:55,553 - INFO -  Running: JSON to CSV
+2025-07-30 22:58:55,624 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:58:55,624 - INFO -  Running: JSON to XLSX
+2025-07-30 22:58:55,743 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:58:55,743 - INFO -  All steps completed successfully.
+2025-07-30 22:58:55,743 - INFO -  Job ended at: 2025-07-30 22:58:55
+2025-07-30 22:58:55,743 - INFO - ==================================================
+2025-07-30 22:59:03,826 - INFO -  Job started at: 2025-07-30 22:59:03
+2025-07-30 22:59:03,826 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:59:03,826 - INFO -  Running: Scrapy Spider
+2025-07-30 22:59:07,559 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:59:07,559 - INFO -  Running: JSON to CSV
+2025-07-30 22:59:07,623 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:59:07,623 - INFO -  Running: JSON to XLSX
+2025-07-30 22:59:07,845 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:59:07,845 - INFO -  All steps completed successfully.
+2025-07-30 22:59:07,845 - INFO -  Job ended at: 2025-07-30 22:59:07
+2025-07-30 22:59:07,845 - INFO - ==================================================
+2025-07-30 22:59:24,729 - INFO -  Job started at: 2025-07-30 22:59:24
+2025-07-30 22:59:24,729 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:59:24,729 - INFO -  Running: Scrapy Spider
+2025-07-30 22:59:31,715 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 22:59:31,715 - INFO -  Running: JSON to CSV
+2025-07-30 22:59:31,787 - INFO -  JSON to CSV completed successfully.
+2025-07-30 22:59:31,790 - INFO -  Running: JSON to XLSX
+2025-07-30 22:59:31,982 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 22:59:31,982 - INFO -  All steps completed successfully.
+2025-07-30 22:59:31,982 - INFO -  Job ended at: 2025-07-30 22:59:31
+2025-07-30 22:59:31,982 - INFO - ==================================================
+2025-07-30 22:59:52,150 - INFO -  Job started at: 2025-07-30 22:59:52
+2025-07-30 22:59:52,150 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 22:59:52,150 - INFO -  Running: Scrapy Spider
+2025-07-30 23:00:05,056 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 23:00:05,056 - INFO -  Running: JSON to CSV
+2025-07-30 23:00:05,129 - INFO -  JSON to CSV completed successfully.
+2025-07-30 23:00:05,129 - INFO -  Running: JSON to XLSX
+2025-07-30 23:00:05,287 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 23:00:05,287 - INFO -  All steps completed successfully.
+2025-07-30 23:00:05,287 - INFO -  Job ended at: 2025-07-30 23:00:05
+2025-07-30 23:00:05,287 - INFO - ==================================================
+2025-07-30 23:00:16,812 - INFO -  Job started at: 2025-07-30 23:00:16
+2025-07-30 23:00:16,812 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 23:00:16,812 - INFO -  Running: Scrapy Spider
+2025-07-30 23:00:30,582 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 23:00:30,582 - INFO -  Running: JSON to CSV
+2025-07-30 23:00:30,661 - INFO -  JSON to CSV completed successfully.
+2025-07-30 23:00:30,661 - INFO -  Running: JSON to XLSX
+2025-07-30 23:00:30,798 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 23:00:30,798 - INFO -  All steps completed successfully.
+2025-07-30 23:00:30,798 - INFO -  Job ended at: 2025-07-30 23:00:30
+2025-07-30 23:00:30,798 - INFO - ==================================================
+2025-07-30 23:01:12,955 - INFO -  Job started at: 2025-07-30 23:01:12
+2025-07-30 23:01:12,961 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-30 23:01:12,961 - INFO -  Running: Scrapy Spider
+2025-07-30 23:01:26,217 - INFO -  Scrapy Spider completed successfully.
+2025-07-30 23:01:26,217 - INFO -  Running: JSON to CSV
+2025-07-30 23:01:26,294 - INFO -  JSON to CSV completed successfully.
+2025-07-30 23:01:26,294 - INFO -  Running: JSON to XLSX
+2025-07-30 23:01:26,515 - INFO -  JSON to XLSX completed successfully.
+2025-07-30 23:01:26,515 - INFO -  All steps completed successfully.
+2025-07-30 23:01:26,515 - INFO -  Job ended at: 2025-07-30 23:01:26
+2025-07-30 23:01:26,515 - INFO - ==================================================
+2025-07-31 10:05:56,672 - INFO -  Job started at: 2025-07-31 10:05:56
+2025-07-31 10:05:56,699 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 10:05:56,717 - INFO -  Running: Scrapy Spider
+2025-07-31 10:06:00,684 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 10:06:00,684 - INFO -  Running: JSON to CSV
+2025-07-31 10:06:00,796 - INFO -  JSON to CSV completed successfully.
+2025-07-31 10:06:00,796 - INFO -  Running: JSON to XLSX
+2025-07-31 10:06:01,022 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 10:06:01,022 - INFO -  All steps completed successfully.
+2025-07-31 10:06:01,022 - INFO -  Job ended at: 2025-07-31 10:06:01
+2025-07-31 10:06:01,022 - INFO - ==================================================
+2025-07-31 10:06:12,888 - INFO -  Job started at: 2025-07-31 10:06:12
+2025-07-31 10:06:12,888 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 10:06:12,888 - INFO -  Running: Scrapy Spider
+2025-07-31 10:06:17,213 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 10:06:17,213 - INFO -  Running: JSON to CSV
+2025-07-31 10:06:17,290 - INFO -  JSON to CSV completed successfully.
+2025-07-31 10:06:17,290 - INFO -  Running: JSON to XLSX
+2025-07-31 10:06:17,502 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 10:06:17,502 - INFO -  All steps completed successfully.
+2025-07-31 10:06:17,502 - INFO -  Job ended at: 2025-07-31 10:06:17
+2025-07-31 10:06:17,502 - INFO - ==================================================
+2025-07-31 10:10:49,969 - INFO -  Job started at: 2025-07-31 10:10:49
+2025-07-31 10:10:49,969 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 10:10:49,969 - INFO -  Running: Scrapy Spider
+2025-07-31 10:10:54,108 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 10:10:54,108 - INFO -  Running: JSON to CSV
+2025-07-31 10:10:54,198 - INFO -  JSON to CSV completed successfully.
+2025-07-31 10:10:54,203 - INFO -  Running: JSON to XLSX
+2025-07-31 10:10:54,397 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 10:10:54,397 - INFO -  All steps completed successfully.
+2025-07-31 10:10:54,397 - INFO -  Job ended at: 2025-07-31 10:10:54
+2025-07-31 10:10:54,397 - INFO - ==================================================
+2025-07-31 10:11:32,379 - INFO -  Job started at: 2025-07-31 10:11:32
+2025-07-31 10:11:32,379 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 10:11:32,379 - INFO -  Running: Scrapy Spider
+2025-07-31 10:11:37,473 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 10:11:37,473 - INFO -  Running: JSON to CSV
+2025-07-31 10:11:37,563 - INFO -  JSON to CSV completed successfully.
+2025-07-31 10:11:37,563 - INFO -  Running: JSON to XLSX
+2025-07-31 10:11:37,692 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 10:11:37,692 - INFO -  All steps completed successfully.
+2025-07-31 10:11:37,692 - INFO -  Job ended at: 2025-07-31 10:11:37
+2025-07-31 10:11:37,692 - INFO - ==================================================
+2025-07-31 10:12:30,806 - INFO - 
+=== Starting Scrapy + CSV Job ===
+2025-07-31 10:12:30,806 - INFO - Running Scrapy spider: bankrate_loans
+2025-07-31 10:12:33,773 - INFO - Scrapy spider completed successfully.
+2025-07-31 10:12:33,773 - INFO - Converting JSON to CSV...
+2025-07-31 10:12:33,842 - INFO - JSON to CSV transformation completed.
+2025-07-31 10:12:33,842 - INFO - Job completed.
+2025-07-31 10:37:07,620 - INFO - 
+=== Starting Scrapy + CSV Job ===
+2025-07-31 10:37:07,621 - INFO - Running Scrapy spider: bankrate_loans
+2025-07-31 10:37:12,548 - INFO - Scrapy spider completed successfully.
+2025-07-31 10:37:12,548 - INFO - Converting JSON to CSV...
+2025-07-31 10:37:12,618 - INFO - JSON to CSV transformation completed.
+2025-07-31 10:37:12,618 - INFO - Job completed.
+2025-07-31 10:38:00,311 - INFO - 
+=== Starting Scrapy + CSV Job ===
+2025-07-31 10:38:00,311 - INFO - Running Scrapy spider: bankrate_loans
+2025-07-31 10:38:03,135 - INFO - Scrapy spider completed successfully.
+2025-07-31 10:38:03,135 - INFO - Converting JSON to CSV...
+2025-07-31 10:38:03,259 - INFO - JSON to CSV transformation completed.
+2025-07-31 10:38:03,259 - INFO - Job completed.
+2025-07-31 10:38:30,840 - INFO - 
+=== Starting Scrapy + CSV Job ===
+2025-07-31 10:38:30,840 - INFO - Running Scrapy spider: bankrate_loans
+2025-07-31 10:38:33,832 - INFO - Scrapy spider completed successfully.
+2025-07-31 10:38:33,832 - INFO - Converting JSON to CSV...
+2025-07-31 10:38:33,886 - INFO - JSON to CSV transformation completed.
+2025-07-31 10:38:33,886 - INFO - Job completed.
+2025-07-31 11:05:45,599 - INFO -  Job started at: 2025-07-31 11:05:45
+2025-07-31 11:05:45,599 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 11:05:45,599 - INFO -  Running: Scrapy Spider
+2025-07-31 11:05:51,657 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 11:05:51,657 - INFO -  Running: JSON to CSV
+2025-07-31 11:05:51,788 - INFO -  JSON to CSV completed successfully.
+2025-07-31 11:05:51,788 - INFO -  Running: JSON to XLSX
+2025-07-31 11:05:56,841 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 11:05:56,841 - INFO -  All steps completed successfully.
+2025-07-31 11:05:56,841 - INFO -  Job ended at: 2025-07-31 11:05:56
+2025-07-31 11:05:56,841 - INFO - ==================================================
+2025-07-31 11:06:53,983 - INFO -  Job started at: 2025-07-31 11:06:53
+2025-07-31 11:06:53,984 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 11:06:53,984 - INFO -  Running: Scrapy Spider
+2025-07-31 11:06:57,646 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 11:06:57,646 - INFO -  Running: JSON to CSV
+2025-07-31 11:06:57,704 - INFO -  JSON to CSV completed successfully.
+2025-07-31 11:06:57,704 - INFO -  Running: JSON to XLSX
+2025-07-31 11:06:58,470 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 11:06:58,470 - INFO -  All steps completed successfully.
+2025-07-31 11:06:58,470 - INFO -  Job ended at: 2025-07-31 11:06:58
+2025-07-31 11:06:58,470 - INFO - ==================================================
+2025-07-31 11:07:29,239 - INFO -  Job started at: 2025-07-31 11:07:29
+2025-07-31 11:07:29,240 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 11:07:29,240 - INFO -  Running: Scrapy Spider
+2025-07-31 11:07:31,684 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 11:07:31,685 - INFO -  Running: JSON to CSV
+2025-07-31 11:07:31,741 - INFO -  JSON to CSV completed successfully.
+2025-07-31 11:07:31,741 - INFO -  Running: JSON to XLSX
+2025-07-31 11:07:32,222 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 11:07:32,222 - INFO -  All steps completed successfully.
+2025-07-31 11:07:32,222 - INFO -  Job ended at: 2025-07-31 11:07:32
+2025-07-31 11:07:32,222 - INFO - ==================================================
+2025-07-31 11:09:05,900 - INFO -  Job started at: 2025-07-31 11:09:05
+2025-07-31 11:09:05,900 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 11:09:05,900 - INFO -  Running: Scrapy Spider
+2025-07-31 11:09:08,669 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 11:09:08,669 - INFO -  Running: JSON to CSV
+2025-07-31 11:09:08,777 - ERROR -  JSON to CSV failed.
+2025-07-31 11:09:08,777 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 80, in <module>
+    main()
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 76, in main
+    print(f"\u2705 Appended {len(new_records)} new record(s) to CSV.")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-07-31 11:09:08,777 - INFO -  Running: JSON to XLSX
+2025-07-31 11:09:09,571 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 11:09:09,571 - INFO - \ufe0f One or more transformation steps failed.
+2025-07-31 11:09:09,571 - INFO -  Job ended at: 2025-07-31 11:09:09
+2025-07-31 11:09:09,571 - INFO - ==================================================
+2025-07-31 11:09:27,943 - INFO -  Job started at: 2025-07-31 11:09:27
+2025-07-31 11:09:27,948 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 11:09:27,948 - INFO -  Running: Scrapy Spider
+2025-07-31 11:09:30,264 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 11:09:30,264 - INFO -  Running: JSON to CSV
+2025-07-31 11:09:30,338 - ERROR -  JSON to CSV failed.
+2025-07-31 11:09:30,338 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 80, in <module>
+    main()
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 62, in main
+    print("\u26a0\ufe0f No new (non-duplicate) records to append.")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 0-1: character maps to <undefined>
+2025-07-31 11:09:30,338 - INFO -  Running: JSON to XLSX
+2025-07-31 11:09:31,197 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 11:09:31,197 - INFO - \ufe0f One or more transformation steps failed.
+2025-07-31 11:09:31,197 - INFO -  Job ended at: 2025-07-31 11:09:31
+2025-07-31 11:09:31,197 - INFO - ==================================================
+2025-07-31 11:10:20,666 - INFO -  Job started at: 2025-07-31 11:10:20
+2025-07-31 11:10:20,666 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 11:10:20,666 - INFO -  Running: Scrapy Spider
+2025-07-31 11:10:23,084 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 11:10:23,084 - INFO -  Running: JSON to CSV
+2025-07-31 11:10:23,161 - ERROR -  JSON to CSV failed.
+2025-07-31 11:10:23,161 - ERROR - Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 80, in <module>
+    main()
+  File "C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\json_to_csv.py", line 76, in main
+    print(f"\u2705 Appended {len(new_records)} new record(s) to CSV.")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-07-31 11:10:23,161 - INFO -  Running: JSON to XLSX
+2025-07-31 11:10:23,853 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 11:10:23,853 - INFO - \ufe0f One or more transformation steps failed.
+2025-07-31 11:10:23,853 - INFO -  Job ended at: 2025-07-31 11:10:23
+2025-07-31 11:10:23,853 - INFO - ==================================================
+2025-07-31 11:12:22,748 - INFO -  Job started at: 2025-07-31 11:12:22
+2025-07-31 11:12:22,748 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 11:12:22,748 - INFO -  Running: Scrapy Spider
+2025-07-31 11:12:25,340 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 11:12:25,340 - INFO -  Running: JSON to CSV
+2025-07-31 11:12:25,410 - INFO -  JSON to CSV completed successfully.
+2025-07-31 11:12:25,410 - INFO -  Running: JSON to XLSX
+2025-07-31 11:12:26,017 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 11:12:26,017 - INFO -  All steps completed successfully.
+2025-07-31 11:12:26,017 - INFO -  Job ended at: 2025-07-31 11:12:26
+2025-07-31 11:12:26,017 - INFO - ==================================================
+2025-07-31 11:16:00,750 - INFO -  Job started at: 2025-07-31 11:16:00
+2025-07-31 11:16:00,750 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-07-31 11:16:00,750 - INFO -  Running: Scrapy Spider
+2025-07-31 11:16:03,159 - INFO -  Scrapy Spider completed successfully.
+2025-07-31 11:16:03,159 - INFO -  Running: JSON to CSV
+2025-07-31 11:16:03,222 - INFO -  JSON to CSV completed successfully.
+2025-07-31 11:16:03,222 - INFO -  Running: JSON to XLSX
+2025-07-31 11:16:03,812 - INFO -  JSON to XLSX completed successfully.
+2025-07-31 11:16:03,812 - INFO -  All steps completed successfully.
+2025-07-31 11:16:03,812 - INFO -  Job ended at: 2025-07-31 11:16:03
+2025-07-31 11:16:03,812 - INFO - ==================================================

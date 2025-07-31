@@ -1,0 +1,16 @@
+loan_product,interest_rate,apr,loan_term_years,lender_name,updated_date,mortgageType
+30-Year Fixed Rate,6.76%,6.82%,30,Bankrate,2025-07-30,Purchase
+20-Year Fixed Rate,6.49%,6.61%,20,Bankrate,2025-07-30,Purchase
+15-Year Fixed Rate,5.99%,6.08%,15,Bankrate,2025-07-30,Purchase
+10-Year Fixed Rate,5.91%,6.00%,10,Bankrate,2025-07-30,Purchase
+30-Year Fixed Rate FHA,6.89%,6.96%,30,Bankrate,2025-07-30,Purchase
+30-Year Fixed Rate VA,7.14%,7.19%,30,Bankrate,2025-07-30,Purchase
+30-Year Fixed Rate Jumbo,6.75%,6.80%,30,Bankrate,2025-07-30,Purchase
+
+30-Year Fixed Rate,6.76%,6.82%,30,Bankrate,2025-07-31,Purchase
+20-Year Fixed Rate,6.44%,6.55%,20,Bankrate,2025-07-31,Purchase
+15-Year Fixed Rate,6.03%,6.12%,15,Bankrate,2025-07-31,Purchase
+10-Year Fixed Rate,6.13%,6.23%,10,Bankrate,2025-07-31,Purchase
+30-Year Fixed Rate FHA,6.91%,6.97%,30,Bankrate,2025-07-31,Purchase
+30-Year Fixed Rate VA,6.94%,7.00%,30,Bankrate,2025-07-31,Purchase
+30-Year Fixed Rate Jumbo,6.75%,6.80%,30,Bankrate,2025-07-31,Purchase
