@@ -3,9 +3,7 @@ import os
 import pandas as pd
 
 # === File Paths ===
-json_file = "output/bankrate.csv"
-csv_file = "output/bankrate.xlsx"
-
+json_file = "C:\\Users\\Admin\\PycharmProjects\\loanrates (2)\\loanrates\\output\\bankrate.json"
 xlsx_file = "C:\\Users\\Admin\\PycharmProjects\\loanrates (2)\\loanrates\\output\\bankrate.xlsx"
 
 # === Load JSON Data ===
