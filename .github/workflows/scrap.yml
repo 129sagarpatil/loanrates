@@ -31,5 +31,6 @@ jobs:
       with:
         name: loanrate-output
         path: |
+          output/bankrate.json
           output/bankrate.csv
           output/bankrate.xlsx

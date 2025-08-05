@@ -482,3 +482,58 @@ UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 
 2025-07-31 11:16:03,812 - INFO -  All steps completed successfully.
 2025-07-31 11:16:03,812 - INFO -  Job ended at: 2025-07-31 11:16:03
 2025-07-31 11:16:03,812 - INFO - ==================================================
+2025-08-01 11:47:24,170 - INFO -  Job started at: 2025-08-01 11:47:24
+2025-08-01 11:47:24,172 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-08-01 11:47:24,173 - INFO -  Running: Scrapy Spider
+2025-08-01 11:47:32,185 - INFO -  Scrapy Spider completed successfully.
+2025-08-01 11:47:32,185 - INFO -  Running: JSON to CSV
+2025-08-01 11:47:32,374 - INFO -  JSON to CSV completed successfully.
+2025-08-01 11:47:32,374 - INFO -  Running: JSON to XLSX
+2025-08-01 11:47:36,943 - INFO -  JSON to XLSX completed successfully.
+2025-08-01 11:47:36,943 - INFO -  All steps completed successfully.
+2025-08-01 11:47:36,943 - INFO -  Job ended at: 2025-08-01 11:47:36
+2025-08-01 11:47:36,943 - INFO - ==================================================
+2025-08-04 10:46:49,573 - INFO -  Job started at: 2025-08-04 10:46:49
+2025-08-04 10:46:49,574 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-08-04 10:46:49,574 - INFO -  Running: Scrapy Spider
+2025-08-04 10:46:56,914 - INFO -  Scrapy Spider completed successfully.
+2025-08-04 10:46:56,914 - INFO -  Running: JSON to CSV
+2025-08-04 10:46:57,013 - INFO -  JSON to CSV completed successfully.
+2025-08-04 10:46:57,014 - INFO -  Running: JSON to XLSX
+2025-08-04 10:47:00,474 - INFO -  JSON to XLSX completed successfully.
+2025-08-04 10:47:00,475 - INFO -  All steps completed successfully.
+2025-08-04 10:47:00,475 - INFO -  Job ended at: 2025-08-04 10:47:00
+2025-08-04 10:47:00,475 - INFO - ==================================================
+2025-08-04 10:50:58,908 - INFO -  Job started at: 2025-08-04 10:50:58
+2025-08-04 10:50:58,909 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-08-04 10:50:58,910 - INFO -  Running: Scrapy Spider
+2025-08-04 10:51:02,964 - INFO -  Scrapy Spider completed successfully.
+2025-08-04 10:51:02,964 - INFO -  Running: JSON to CSV
+2025-08-04 10:51:03,034 - INFO -  JSON to CSV completed successfully.
+2025-08-04 10:51:03,035 - INFO -  Running: JSON to XLSX
+2025-08-04 10:51:03,892 - INFO -  JSON to XLSX completed successfully.
+2025-08-04 10:51:03,892 - INFO -  All steps completed successfully.
+2025-08-04 10:51:03,892 - INFO -  Job ended at: 2025-08-04 10:51:03
+2025-08-04 10:51:03,892 - INFO - ==================================================
+2025-08-04 10:51:37,951 - INFO -  Job started at: 2025-08-04 10:51:37
+2025-08-04 10:51:37,951 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-08-04 10:51:37,951 - INFO -  Running: Scrapy Spider
+2025-08-04 10:51:44,346 - INFO -  Scrapy Spider completed successfully.
+2025-08-04 10:51:44,346 - INFO -  Running: JSON to CSV
+2025-08-04 10:51:44,426 - INFO -  JSON to CSV completed successfully.
+2025-08-04 10:51:44,426 - INFO -  Running: JSON to XLSX
+2025-08-04 10:51:45,178 - INFO -  JSON to XLSX completed successfully.
+2025-08-04 10:51:45,178 - INFO -  All steps completed successfully.
+2025-08-04 10:51:45,178 - INFO -  Job ended at: 2025-08-04 10:51:45
+2025-08-04 10:51:45,178 - INFO - ==================================================
+2025-08-04 14:08:27,947 - INFO -  Job started at: 2025-08-04 14:08:27
+2025-08-04 14:08:27,947 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-08-04 14:08:27,947 - INFO -  Running: Scrapy Spider
+2025-08-04 14:08:36,569 - INFO -  Scrapy Spider completed successfully.
+2025-08-04 14:08:36,569 - INFO -  Running: JSON to CSV
+2025-08-04 14:08:36,717 - INFO -  JSON to CSV completed successfully.
+2025-08-04 14:08:36,717 - INFO -  Running: JSON to XLSX
+2025-08-04 14:08:41,727 - INFO -  JSON to XLSX completed successfully.
+2025-08-04 14:08:41,727 - INFO -  All steps completed successfully.
+2025-08-04 14:08:41,727 - INFO -  Job ended at: 2025-08-04 14:08:41
+2025-08-04 14:08:41,727 - INFO - ==================================================
