@@ -1,65 +1,65 @@
 [
 {
     "loan_product": "30-Year Fixed Rate",
-    "interest_rate": "6.68%",
-    "apr": "6.74%",
+    "interest_rate": "6.58%",
+    "apr": "6.64%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2025-08-06",
+    "updated_date": "2025-08-08",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "20-Year Fixed Rate",
-    "interest_rate": "6.44%",
-    "apr": "6.53%",
+    "interest_rate": "6.26%",
+    "apr": "6.35%",
     "loan_term_years": "20",
     "lender_name": "Bankrate",
-    "updated_date": "2025-08-06",
+    "updated_date": "2025-08-08",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "15-Year Fixed Rate",
-    "interest_rate": "5.90%",
-    "apr": "5.99%",
+    "interest_rate": "5.76%",
+    "apr": "5.86%",
     "loan_term_years": "15",
     "lender_name": "Bankrate",
-    "updated_date": "2025-08-06",
+    "updated_date": "2025-08-08",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "10-Year Fixed Rate",
-    "interest_rate": "5.80%",
-    "apr": "5.87%",
+    "interest_rate": "5.71%",
+    "apr": "5.79%",
     "loan_term_years": "10",
     "lender_name": "Bankrate",
-    "updated_date": "2025-08-06",
+    "updated_date": "2025-08-08",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate FHA",
-    "interest_rate": "6.77%",
-    "apr": "6.83%",
+    "interest_rate": "6.31%",
+    "apr": "6.36%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2025-08-06",
+    "updated_date": "2025-08-08",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate VA",
-    "interest_rate": "6.87%",
-    "apr": "6.92%",
+    "interest_rate": "6.36%",
+    "apr": "6.41%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2025-08-06",
+    "updated_date": "2025-08-08",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate Jumbo",
-    "interest_rate": "6.69%",
-    "apr": "6.73%",
+    "interest_rate": "6.66%",
+    "apr": "6.71%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2025-08-06",
+    "updated_date": "2025-08-08",
     "mortgageType": "Purchase"
 }
 ]
