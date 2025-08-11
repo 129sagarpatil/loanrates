@@ -1,9 +1,12 @@
-name:  Run Bankrate Daily
+name: Run Bankrate Daily
 
 on:
   schedule:
     - cron: "30 3 * * *"  # Runs daily at 3:30 AM UTC (9 AM IST)
-  workflow_dispatch:
+  workflow_dispatch:       # Allows manual trigger
+
+permissions:
+  contents: write  # ✅ Required to push changes to repo
 
 jobs:
   run-bankrate:
@@ -12,6 +15,9 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
+      with:
+        persist-credentials: true
+        fetch-depth: 0
 
     - name: Setup Python
       uses: actions/setup-python@v4
@@ -26,11 +32,24 @@ jobs:
     - name: Run Script
       run: python run_all.py
 
-    - name: Upload Output Files
-      uses: actions/upload-artifact@v4
-      with:
-        name: loanrate-output
-        path: |
-          output/bankrate.json
-          output/bankrate.csv
-          output/bankrate.xlsx
+    - name: Debug - List Output Files
+      run: |
+        echo "Files generated in output folder:"
+        ls -l output || echo "No output folder found"
+
+    - name: Commit and Push Updated Output
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+        # Add only the output files if they exist
+        for file in output/bankrate.json output/bankrate.csv output/bankrate.xlsx; do
+          if [ -f "$file" ]; then
+            git add "$file"
+          else
+            echo "File not found: $file"
+          fi
+        done
+
+        git commit -m "Update scraped data $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+        git push
