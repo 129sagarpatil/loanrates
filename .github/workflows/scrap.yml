@@ -2,11 +2,11 @@ name: Run Bankrate Daily
 
 on:
   schedule:
-    - cron: "30 3 * * *"  # Runs daily at 3:30 AM UTC (9 AM IST)
+    - cron: "30 3 * * *"  # Runs daily at 3:30 AM UTC (9:00 AM IST)
   workflow_dispatch:       # Allows manual trigger
 
 permissions:
-  contents: write
+  contents: write  # ✅ Required to push changes to repo
 
 jobs:
   run-bankrate:
@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         persist-credentials: true
-        fetch-depth: 0
+        fetch-depth: 0  # Fetch full history so we can rebase
 
     - name: Setup Python
       uses: actions/setup-python@v4
@@ -29,21 +29,22 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Full Script
+    - name: Run Script
       run: python run_all.py
 
     - name: Debug - List Output Files
       run: |
-        echo "Listing files in output directory:"
-        find output -type f || echo "No files found"
+        echo "Files generated in output folder:"
+        ls -l output || echo "No output folder found"
 
     - name: Commit and Push Updated Output
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-        # Pull latest remote changes first to avoid non-fast-forward error
-        git pull origin main --rebase
+        # Fetch and rebase to avoid non-fast-forward errors
+        git fetch origin main
+        git pull origin main --rebase || echo "No changes to pull"
 
         # Add only the output files if they exist
         for file in output/bankrate.json output/bankrate.csv output/bankrate.xlsx; do
