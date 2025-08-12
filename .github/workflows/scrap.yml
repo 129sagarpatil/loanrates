@@ -1,12 +1,9 @@
-name: Run Bankrate Daily
+name:  Run Bankrate Daily
 
 on:
   schedule:
-    - cron: "30 3 * * *"  # Daily at 3:30 AM UTC (9 AM IST)
-  workflow_dispatch:       # Allows manual trigger
-
-permissions:
-  contents: write
+    - cron: "30 3 * * *"  # Runs daily at 3:30 AM UTC (9 AM IST)
+  workflow_dispatch:
 
 jobs:
   run-bankrate:
@@ -15,14 +12,6 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
-      with:
-        persist-credentials: true
-        fetch-depth: 0
-
-    - name: Setup Git Config
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
     - name: Setup Python
       uses: actions/setup-python@v4
@@ -34,27 +23,19 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Pull latest CSV before running script
-      run: |
-        git pull origin main --rebase || echo "No changes to pull"
-
     - name: Run Script
       run: python run_all.py
 
-    - name: Commit and Push Updated Output
-      run: |
-        # Add .gitignore for temp files
-        echo "__pycache__/" >> .gitignore
-        echo "*.pyc" >> .gitignore
-        echo "logs/" >> .gitignore
-        git add .gitignore
+    - name: Upload Output Files
+      uses: actions/upload-artifact@v4
+      with:
+        name: loanrate-output
+        path: |
+          output/bankrate.json
+          output/bankrate.csv
+          output/bankrate.xlsx
 
-        # Add only output files if they exist
-        for file in output/bankrate.json output/bankrate.csv output/bankrate.xlsx; do
-          if [ -f "$file" ]; then
-            git add "$file"
-          fi
-        done
 
-        git commit -m "Update scraped data $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-        git push origin main
+
+
+
