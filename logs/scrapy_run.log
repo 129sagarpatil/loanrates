@@ -731,3 +731,14 @@ ModuleNotFoundError: No module named 'pandas'
 2025-08-12 11:34:22,869 - INFO - All steps completed successfully.
 2025-08-12 11:34:22,869 - INFO - Job ended at: 2025-08-12 11:34:22
 2025-08-12 11:34:22,869 - INFO - ==================================================
+2025-08-12 12:18:07,377 - INFO - Job started at: 2025-08-12 12:18:07
+2025-08-12 12:18:07,420 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-08-12 12:18:07,436 - INFO - Running: Scrapy Spider in C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates
+2025-08-12 12:18:14,941 - INFO - Scrapy Spider completed successfully.
+2025-08-12 12:18:14,941 - INFO - Running: JSON to CSV in C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates
+2025-08-12 12:18:15,132 - INFO - JSON to CSV completed successfully.
+2025-08-12 12:18:15,132 - INFO - Running: JSON to XLSX in C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates
+2025-08-12 12:18:16,731 - INFO - JSON to XLSX completed successfully.
+2025-08-12 12:18:16,731 - INFO - All steps completed successfully.
+2025-08-12 12:18:16,731 - INFO - Job ended at: 2025-08-12 12:18:16
+2025-08-12 12:18:16,731 - INFO - ==================================================
