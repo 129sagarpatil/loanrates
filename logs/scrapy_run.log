@@ -698,3 +698,14 @@ ModuleNotFoundError: No module named 'pandas'
 2025-08-11 09:59:49,438 - INFO -  All steps completed successfully.
 2025-08-11 09:59:49,438 - INFO -  Job ended at: 2025-08-11 09:59:49
 2025-08-11 09:59:49,438 - INFO - ==================================================
+2025-08-11 12:47:29,706 - INFO -  Job started at: 2025-08-11 12:47:29
+2025-08-11 12:47:29,723 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-08-11 12:47:29,723 - INFO -  Running: Scrapy Spider
+2025-08-11 12:47:38,180 - INFO -  Scrapy Spider completed successfully.
+2025-08-11 12:47:38,180 - INFO -  Running: JSON to CSV
+2025-08-11 12:47:38,368 - INFO -  JSON to CSV completed successfully.
+2025-08-11 12:47:38,368 - INFO -  Running: JSON to XLSX
+2025-08-11 12:47:44,169 - INFO -  JSON to XLSX completed successfully.
+2025-08-11 12:47:44,169 - INFO -  All steps completed successfully.
+2025-08-11 12:47:44,169 - INFO -  Job ended at: 2025-08-11 12:47:44
+2025-08-11 12:47:44,169 - INFO - ==================================================

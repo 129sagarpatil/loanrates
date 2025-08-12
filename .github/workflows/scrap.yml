@@ -6,7 +6,7 @@ on:
   workflow_dispatch:       # Allows manual trigger
 
 permissions:
-  contents: write  # ✅ Required to push changes to repo
+  contents: write
 
 jobs:
   run-bankrate:
@@ -29,27 +29,21 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Script
+    - name: Run Full Script
       run: python run_all.py
 
     - name: Debug - List Output Files
       run: |
-        echo "Files generated in output folder:"
-        ls -l output || echo "No output folder found"
+        echo "Listing files in output directory:"
+        find output -type f || echo "No files found"
 
     - name: Commit and Push Updated Output
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-        # Add only the output files if they exist
-        for file in output/bankrate.json output/bankrate.csv output/bankrate.xlsx; do
-          if [ -f "$file" ]; then
-            git add "$file"
-          else
-            echo "File not found: $file"
-          fi
-        done
-
+        # Add only files that exist
+        git add output/bankrate.json output/bankrate.csv output/bankrate.xlsx 2>/dev/null || true
+        
         git commit -m "Update scraped data $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
         git push
