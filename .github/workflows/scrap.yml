@@ -19,6 +19,11 @@ jobs:
         persist-credentials: true
         fetch-depth: 0
 
+    - name: Setup Git Config
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
@@ -29,24 +34,22 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Pull latest CSV before running script
+      run: |
+        git pull origin main --rebase || echo "No changes to pull"
+
     - name: Run Script
       run: python run_all.py
 
     - name: Commit and Push Updated Output
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-        # Add .gitignore to skip temp files
+        # Add .gitignore for temp files
         echo "__pycache__/" >> .gitignore
         echo "*.pyc" >> .gitignore
         echo "logs/" >> .gitignore
         git add .gitignore
 
-        # Pull latest changes before committing
-        git pull origin main --rebase || echo "No changes to pull"
-
-        # Add only output files
+        # Add only output files if they exist
         for file in output/bankrate.json output/bankrate.csv output/bankrate.xlsx; do
           if [ -f "$file" ]; then
             git add "$file"
