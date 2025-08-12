@@ -3,8 +3,8 @@ import os
 import pandas as pd
 
 # === File Paths ===
-json_file = "C:\\Users\\Admin\\PycharmProjects\\loanrates (2)\\loanrates\\output\\bankrate.json"
-xlsx_file = "C:\\Users\\Admin\\PycharmProjects\\loanrates (2)\\loanrates\\output\\bankrate.xlsx"
+json_file = r"C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\output\bankrate.json"
+xlsx_file = r"C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates\output\bankrate.xlsx"
 
 # === Load JSON Data ===
 if not os.path.exists(json_file):
@@ -24,13 +24,36 @@ if not data:
     print("[INFO] JSON file is empty.")
     exit()
 
-# === Convert to DataFrame and Remove Duplicates ===
-df = pd.DataFrame(data)
+# Convert new JSON data to DataFrame
+df_new = pd.DataFrame(data)
 
-# Drop duplicates based on 'loan_product' and 'updated_date'
-df_clean = df.drop_duplicates(subset=["loan_product", "updated_date"])
+# === Load Existing Excel Data if available ===
+if os.path.exists(xlsx_file) and os.path.getsize(xlsx_file) > 0:
+    try:
+        df_existing = pd.read_excel(xlsx_file, engine="openpyxl")
+    except Exception:
+        df_existing = pd.DataFrame()
+else:
+    df_existing = pd.DataFrame()
 
-# === Write to Excel using xlsxwriter ===
-df_clean.to_excel(xlsx_file, index=False, engine="xlsxwriter")
+# === Merge (Override if same loan_product + updated_date) ===
+if not df_existing.empty:
+    # Remove old rows with same key from existing
+    merged_df = df_existing[
+        ~df_existing.set_index(["loan_product", "updated_date"]).index.isin(
+            df_new.set_index(["loan_product", "updated_date"]).index
+        )
+    ]
+    # Append new rows
+    final_df = pd.concat([merged_df, df_new], ignore_index=True)
+else:
+    final_df = df_new
 
-print(f"[OK] Wrote {len(df_clean)} unique record(s) to Excel: {xlsx_file}")
+# Drop duplicates again for safety
+final_df = final_df.drop_duplicates(subset=["loan_product", "updated_date"], keep="last")
+
+# === Save Back to Excel ===
+final_df.to_excel(xlsx_file, index=False, engine="xlsxwriter")
+
+print(f"[OK] Updated Excel with {len(df_new)} new/updated record(s).")
+print(f"[TOTAL] Excel now contains {len(final_df)} record(s).")

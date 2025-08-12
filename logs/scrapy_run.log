@@ -709,3 +709,25 @@ ModuleNotFoundError: No module named 'pandas'
 2025-08-11 12:47:44,169 - INFO -  All steps completed successfully.
 2025-08-11 12:47:44,169 - INFO -  Job ended at: 2025-08-11 12:47:44
 2025-08-11 12:47:44,169 - INFO - ==================================================
+2025-08-12 11:28:55,438 - INFO - Job started at: 2025-08-12 11:28:55
+2025-08-12 11:28:55,439 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-08-12 11:28:55,440 - INFO - Running: Scrapy Spider in C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates
+2025-08-12 11:29:04,399 - INFO - Scrapy Spider completed successfully.
+2025-08-12 11:29:04,401 - INFO - Running: JSON to CSV in C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates
+2025-08-12 11:29:04,483 - INFO - JSON to CSV completed successfully.
+2025-08-12 11:29:04,483 - INFO - Running: JSON to XLSX in C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates
+2025-08-12 11:29:07,492 - INFO - JSON to XLSX completed successfully.
+2025-08-12 11:29:07,492 - INFO - All steps completed successfully.
+2025-08-12 11:29:07,492 - INFO - Job ended at: 2025-08-12 11:29:07
+2025-08-12 11:29:07,492 - INFO - ==================================================
+2025-08-12 11:34:14,246 - INFO - Job started at: 2025-08-12 11:34:14
+2025-08-12 11:34:14,246 - INFO - ===  Starting Full Scrapy \u2192 CSV \u2192 XLSX Job ===
+2025-08-12 11:34:14,247 - INFO - Running: Scrapy Spider in C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates
+2025-08-12 11:34:19,408 - INFO - Scrapy Spider completed successfully.
+2025-08-12 11:34:19,408 - INFO - Running: JSON to CSV in C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates
+2025-08-12 11:34:19,545 - INFO - JSON to CSV completed successfully.
+2025-08-12 11:34:19,545 - INFO - Running: JSON to XLSX in C:\Users\Admin\PycharmProjects\loanrates (2)\loanrates
+2025-08-12 11:34:22,869 - INFO - JSON to XLSX completed successfully.
+2025-08-12 11:34:22,869 - INFO - All steps completed successfully.
+2025-08-12 11:34:22,869 - INFO - Job ended at: 2025-08-12 11:34:22
+2025-08-12 11:34:22,869 - INFO - ==================================================
