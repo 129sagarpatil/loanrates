@@ -40,9 +40,13 @@ jobs:
 
       - name: Commit and Push Updated Output
         run: |
-          git add output/bankrate.json output/bankrate.csv output/bankrate.xlsx
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main || true
+          git add -f output/bankrate.json output/bankrate.csv output/bankrate.xlsx
           git commit -m "Update scraped data $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
           git push origin main
+      
     
 
 
