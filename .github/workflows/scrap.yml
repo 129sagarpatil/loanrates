@@ -42,8 +42,17 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-        # Add only files that exist
-        git add output/bankrate.json output/bankrate.csv output/bankrate.xlsx 2>/dev/null || true
-        
+        # Pull latest remote changes first to avoid non-fast-forward error
+        git pull origin main --rebase
+
+        # Add only the output files if they exist
+        for file in output/bankrate.json output/bankrate.csv output/bankrate.xlsx; do
+          if [ -f "$file" ]; then
+            git add "$file"
+          else
+            echo "File not found: $file"
+          fi
+        done
+
         git commit -m "Update scraped data $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-        git push
+        git push origin main
