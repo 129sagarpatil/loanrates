@@ -1,55 +1,57 @@
-name: Run Bankrate Daily
+name: Daily Web Scraper
 
 on:
   schedule:
-    - cron: "30 5 * * *"  # Runs daily at 11:00 AM IST (5:30 AM UTC)
+    - cron: '0 6 * * *'  # Runs daily at 11:30 AM IST (06:00 UTC)
   workflow_dispatch:       # Allows manual trigger
 
 permissions:
-  contents: write  # ✅ Required to push changes to repo
+  contents: write  # ✅ Allow push access
 
 jobs:
-  run-bankrate:
+  run-scraper:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
+    - name: Checkout code
       uses: actions/checkout@v4
       with:
         persist-credentials: true
         fetch-depth: 0
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: '3.11'
 
-    - name: Install Requirements
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        # Safety net: force install key deps
-        pip install pandas xlsxwriter scrapy
+        pip install scrapy pandas xlsxwriter
 
-    - name: Run Script
+    - name: Run scraping script
       run: python run_all.py
 
-    - name: Debug - List Output Files
+    - name: Debug - list files after scrape
       run: |
-        echo "Files generated in output folder:"
-        ls -l output || echo "No output folder found"
+        echo "Files after scraping:"
+        find output -type f || echo "No files found"
 
-    - name: Commit and Push Updated Output
+    - name: Commit and push updated files
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-        # Fetch latest to avoid non-fast-forward issues
+        # Fetch latest to avoid non-fast-forward errors
         git fetch origin main
         git pull origin main --rebase || echo "No changes to pull"
 
-        # Add only the output files if they exist
-        for file in output/bankrate.json output/bankrate.csv output/bankrate.xlsx; do
+        # Add files only if they exist
+        for file in \
+          output/bankrate.json \
+          output/bankrate.csv \
+          output/bankrate.xlsx \
+          logs/scrapy_run.log; do
           if [ -f "$file" ]; then
             git add "$file"
           else
