@@ -6,9 +6,15 @@ import sys
 
 # === Setup Directories ===
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Logs directory
 log_dir = os.path.join(BASE_DIR, "logs")
 os.makedirs(log_dir, exist_ok=True)
 log_file = os.path.join(log_dir, "scrapy_run.log")
+
+# Output directory (for CSV, XLSX, JSON etc.)
+output_dir = os.path.join(BASE_DIR, "output")
+os.makedirs(output_dir, exist_ok=True)
 
 # === Configure Logging ===
 logging.basicConfig(
@@ -58,7 +64,8 @@ def run_script(command, name, script_dir=None):
 
 # === Task Runners ===
 def run_spider():
-    return run_script(["scrapy", "crawl", "bankrate_loans"], "Scrapy Spider")
+    # Save scraped data into output directory (optional: -o output/file.json)
+    return run_script(["scrapy", "crawl", "bankrate_loans", "-O", os.path.join(output_dir, "bankrate.json")], "Scrapy Spider")
 
 def run_json_to_csv():
     return run_script([sys.executable, os.path.join(BASE_DIR, "json_to_csv.py")], "JSON to CSV", BASE_DIR)
@@ -84,3 +91,4 @@ if __name__ == "__main__":
 
     log_and_print("Job ended at: " + datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     log_and_print("=" * 50)
+

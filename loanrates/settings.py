@@ -17,8 +17,13 @@ NEWSPIDER_MODULE = "loanrates.spiders"
 #USER_AGENT = "loanrates (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
+import os
+
+# Ensure output directory exists
+os.makedirs("output", exist_ok=True)
+
 FEEDS = {
-    'output/bankrate.json': {
+    os.path.join("output", "bankrate.json"): {
         'format': 'json',
         'overwrite': True,  # overwrite instead of appending
         'encoding': 'utf8',
