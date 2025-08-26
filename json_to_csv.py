@@ -4,8 +4,8 @@ import json
 from datetime import date
 
 # === File paths ===
-json_file = "output/bankrate.json"
-csv_file = "output/bankrate.csv"
+json_file = "C:\\Users\\Admin\\PycharmProjects\\loanrates (2)\\loanrates\\output\\bankrate.json"
+csv_file = "C:\\Users\\Admin\\PycharmProjects\\loanrates (2)\\loanrates\\output\\bankrate.csv"
 
 # === Required Fields ===
 FIELDS = ["loan_product", "interest_rate", "apr", "loan_term_years", "lender_name", "updated_date", "mortgageType"]
