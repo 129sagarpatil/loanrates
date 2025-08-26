@@ -35,9 +35,9 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         # Add files only if they exist
         for file in \
-         loanrates/output/bankrate.json \
-         loanrates/output/bankrate.csv \
-         loanrates/output/bankrate.xlsx \
+         output/bankrate.json \
+         output/bankrate.csv \
+         output/bankrate.xlsx \
           logs/scrapy_run.log; do
           if [ -f "$file" ]; then
             git add "$file"
