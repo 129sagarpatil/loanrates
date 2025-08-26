@@ -1,0 +1,597 @@
+<!--import React, { useState, useMemo } from "react";-->
+<!--import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";-->
+<!--import { Badge } from "@/components/ui/badge";-->
+<!--import { Input } from "@/components/ui/input";-->
+<!--import { Button } from "@/components/ui/button";-->
+<!--import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";-->
+<!--import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";-->
+<!--import {-->
+<!--  Search,-->
+<!--  Download,-->
+<!--  Filter,-->
+<!--  TrendingUp,-->
+<!--  TrendingDown,-->
+<!--  BarChart3,-->
+<!--  PieChart,-->
+<!--  Users,-->
+<!--  DollarSign,-->
+<!--  Calendar,-->
+<!--  ArrowUpDown,-->
+<!--  Eye,-->
+<!--  RefreshCw,-->
+<!--  FileSpreadsheet,-->
+<!--  Activity-->
+<!--} from "lucide-react";-->
+<!--import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart as RechartsPieChart, Cell, LineChart, Line, Area, AreaChart, Pie } from "recharts";-->
+
+<!--// Enhanced mock data-->
+<!--const mockData = [-->
+<!--  {-->
+<!--    id: 1,-->
+<!--    loan_product: "30-Year Fixed Rate",-->
+<!--    interest_rate: 6.66,-->
+<!--    apr_percent: 6.72,-->
+<!--    loan_term_years: 30,-->
+<!--    lender_name: "Bankrate",-->
+<!--    updated_date: "2025-08-07",-->
+<!--    status: "active",-->
+<!--    applications: 1247,-->
+<!--    approval_rate: 89.2-->
+<!--  },-->
+<!--  {-->
+<!--    id: 2,-->
+<!--    loan_product: "15-Year Fixed Rate",-->
+<!--    interest_rate: 5.95,-->
+<!--    apr_percent: 6.05,-->
+<!--    loan_term_years: 15,-->
+<!--    lender_name: "Quicken Loans",-->
+<!--    updated_date: "2025-08-06",-->
+<!--    status: "active",-->
+<!--    applications: 892,-->
+<!--    approval_rate: 92.1-->
+<!--  },-->
+<!--  {-->
+<!--    id: 3,-->
+<!--    loan_product: "ARM 5/1",-->
+<!--    interest_rate: 5.25,-->
+<!--    apr_percent: 7.12,-->
+<!--    loan_term_years: 30,-->
+<!--    lender_name: "Wells Fargo",-->
+<!--    updated_date: "2025-08-05",-->
+<!--    status: "pending",-->
+<!--    applications: 634,-->
+<!--    approval_rate: 78.5-->
+<!--  },-->
+<!--  {-->
+<!--    id: 4,-->
+<!--    loan_product: "FHA 30-Year",-->
+<!--    interest_rate: 6.25,-->
+<!--    apr_percent: 6.45,-->
+<!--    loan_term_years: 30,-->
+<!--    lender_name: "Chase",-->
+<!--    updated_date: "2025-08-04",-->
+<!--    status: "active",-->
+<!--    applications: 1567,-->
+<!--    approval_rate: 85.7-->
+<!--  },-->
+<!--  {-->
+<!--    id: 5,-->
+<!--    loan_product: "VA 30-Year",-->
+<!--    interest_rate: 6.15,-->
+<!--    apr_percent: 6.32,-->
+<!--    loan_term_years: 30,-->
+<!--    lender_name: "Navy Federal",-->
+<!--    updated_date: "2025-08-03",-->
+<!--    status: "active",-->
+<!--    applications: 723,-->
+<!--    approval_rate: 94.3-->
+<!--  },-->
+<!--  {-->
+<!--    id: 6,-->
+<!--    loan_product: "Jumbo 30-Year",-->
+<!--    interest_rate: 7.12,-->
+<!--    apr_percent: 7.28,-->
+<!--    loan_term_years: 30,-->
+<!--    lender_name: "Bank of America",-->
+<!--    updated_date: "2025-08-02",-->
+<!--    status: "inactive",-->
+<!--    applications: 456,-->
+<!--    approval_rate: 76.8-->
+<!--  }-->
+<!--];-->
+
+<!--const COLORS = ['hsl(var(&#45;&#45;primary))', 'hsl(var(&#45;&#45;secondary))', 'hsl(var(&#45;&#45;accent))', 'hsl(var(&#45;&#45;info))', 'hsl(var(&#45;&#45;success))', 'hsl(var(&#45;&#45;destructive))'];-->
+
+<!--export function DataDashboard() {-->
+<!--  const [searchTerm, setSearchTerm] = useState("");-->
+<!--  const [filterStatus, setFilterStatus] = useState("all");-->
+<!--  const [sortBy, setSortBy] = useState("interest_rate");-->
+<!--  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");-->
+<!--  const [currentPage, setCurrentPage] = useState(1);-->
+<!--  const itemsPerPage = 5;-->
+
+<!--  // Enhanced filtering and sorting-->
+<!--  const filteredAndSortedData = useMemo(() => {-->
+<!--    let filtered = mockData.filter(item => {-->
+<!--      const matchesSearch = item.loan_product.toLowerCase().includes(searchTerm.toLowerCase()) ||-->
+<!--                          item.lender_name.toLowerCase().includes(searchTerm.toLowerCase());-->
+<!--      const matchesStatus = filterStatus === "all" || item.status === filterStatus;-->
+<!--      return matchesSearch && matchesStatus;-->
+<!--    });-->
+
+<!--    filtered.sort((a, b) => {-->
+<!--      let aVal = a[sortBy as keyof typeof a];-->
+<!--      let bVal = b[sortBy as keyof typeof b];-->
+
+<!--      if (typeof aVal === 'string') {-->
+<!--        aVal = aVal.toLowerCase();-->
+<!--        bVal = (bVal as string).toLowerCase();-->
+<!--      }-->
+
+<!--      if (sortOrder === "asc") {-->
+<!--        return aVal < bVal ? -1 : aVal > bVal ? 1 : 0;-->
+<!--      } else {-->
+<!--        return aVal > bVal ? -1 : aVal < bVal ? 1 : 0;-->
+<!--      }-->
+<!--    });-->
+
+<!--    return filtered;-->
+<!--  }, [searchTerm, filterStatus, sortBy, sortOrder]);-->
+
+<!--  // Pagination-->
+<!--  const totalPages = Math.ceil(filteredAndSortedData.length / itemsPerPage);-->
+<!--  const paginatedData = filteredAndSortedData.slice(-->
+<!--    (currentPage - 1) * itemsPerPage,-->
+<!--    currentPage * itemsPerPage-->
+<!--  );-->
+
+<!--  // Chart data-->
+<!--  const chartData = mockData.map(item => ({-->
+<!--    name: item.loan_product.split(' ')[0],-->
+<!--    rate: item.interest_rate,-->
+<!--    applications: item.applications,-->
+<!--    approval: item.approval_rate-->
+<!--  }));-->
+
+<!--  const pieData = mockData.reduce((acc, item) => {-->
+<!--    const existing = acc.find(p => p.name === item.lender_name);-->
+<!--    if (existing) {-->
+<!--      existing.value += item.applications;-->
+<!--    } else {-->
+<!--      acc.push({ name: item.lender_name, value: item.applications });-->
+<!--    }-->
+<!--    return acc;-->
+<!--  }, [] as Array<{name: string, value: number}>);-->
+
+<!--  const totalApplications = mockData.reduce((sum, item) => sum + item.applications, 0);-->
+<!--  const avgApprovalRate = mockData.reduce((sum, item) => sum + item.approval_rate, 0) / mockData.length;-->
+<!--  const avgInterestRate = mockData.reduce((sum, item) => sum + item.interest_rate, 0) / mockData.length;-->
+<!--  const activeLoans = mockData.filter(item => item.status === "active").length;-->
+
+<!--  const downloadCSV = () => {-->
+<!--    const headers = ["Loan Product", "Interest Rate", "APR", "Term", "Lender", "Status", "Applications", "Approval Rate"];-->
+<!--    const csvContent = [-->
+<!--      headers.join(","),-->
+<!--      ...filteredAndSortedData.map(row => [-->
+<!--        row.loan_product,-->
+<!--        `${row.interest_rate}%`,-->
+<!--        `${row.apr_percent}%`,-->
+<!--        `${row.loan_term_years} years`,-->
+<!--        row.lender_name,-->
+<!--        row.status,-->
+<!--        row.applications,-->
+<!--        `${row.approval_rate}%`-->
+<!--      ].join(","))-->
+<!--    ].join("\n");-->
+
+<!--    const blob = new Blob([csvContent], { type: "text/csv" });-->
+<!--    const url = window.URL.createObjectURL(blob);-->
+<!--    const link = document.createElement("a");-->
+<!--    link.href = url;-->
+<!--    link.download = "loan-products-data.csv";-->
+<!--    link.click();-->
+<!--  };-->
+
+<!--  const handleSort = (field: string) => {-->
+<!--    if (sortBy === field) {-->
+<!--      setSortOrder(sortOrder === "asc" ? "desc" : "asc");-->
+<!--    } else {-->
+<!--      setSortBy(field);-->
+<!--      setSortOrder("asc");-->
+<!--    }-->
+<!--  };-->
+
+<!--  return (-->
+<!--    <div className="min-h-screen bg-gradient-subtle font-inter">-->
+<!--      {/* Enhanced Hero Header */}-->
+<!--      <div className="relative overflow-hidden">-->
+<!--        <div className="bg-gradient-hero px-8 py-20 text-center relative">-->
+<!--          <div className="absolute inset-0 bg-black/20"></div>-->
+<!--          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KPGcgZmlsbD0iI2ZmZmZmZiIgZmlsbC1vcGFjaXR5PSIwLjA1Ij4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPgo8L2c+CjwvZz4KPC9zdmc+')] opacity-30"></div>-->
+
+<!--          <div className="relative z-10 max-w-5xl mx-auto animate-fade-in">-->
+<!--            <div className="flex items-center justify-center gap-4 mb-6">-->
+<!--              <div className="p-4 bg-white/20 rounded-3xl backdrop-blur-sm border border-white/30">-->
+<!--                <Activity className="h-10 w-10 text-white" />-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <h1 className="text-6xl font-bold text-white mb-2 tracking-tight">-->
+<!--                  Loan Analytics-->
+<!--                </h1>-->
+<!--                <div className="h-1 w-32 bg-white/50 rounded-full mx-auto"></div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <p className="text-xl text-white/90 font-medium max-w-2xl mx-auto leading-relaxed">-->
+<!--              Advanced mortgage rate analysis and market insights dashboard-->
+<!--            </p>-->
+<!--            <div className="flex items-center justify-center gap-6 mt-8">-->
+<!--              <div className="text-center">-->
+<!--                <div className="text-3xl font-bold text-white">{totalApplications.toLocaleString()}</div>-->
+<!--                <div className="text-white/70 text-sm">Total Applications</div>-->
+<!--              </div>-->
+<!--              <div className="w-px h-12 bg-white/30"></div>-->
+<!--              <div className="text-center">-->
+<!--                <div className="text-3xl font-bold text-white">{avgApprovalRate.toFixed(1)}%</div>-->
+<!--                <div className="text-white/70 text-sm">Avg Approval Rate</div>-->
+<!--              </div>-->
+<!--              <div className="w-px h-12 bg-white/30"></div>-->
+<!--              <div className="text-center">-->
+<!--                <div className="text-3xl font-bold text-white">{avgInterestRate.toFixed(2)}%</div>-->
+<!--                <div className="text-white/70 text-sm">Avg Interest Rate</div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">-->
+<!--        {/* Enhanced Stats Cards */}-->
+<!--        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>-->
+<!--          <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">-->
+<!--            <CardContent className="p-6">-->
+<!--              <div className="flex items-center justify-between">-->
+<!--                <div>-->
+<!--                  <p className="text-muted-foreground text-sm font-medium">Active Loans</p>-->
+<!--                  <p className="text-3xl font-bold text-primary">{activeLoans}</p>-->
+<!--                  <p className="text-xs text-success font-medium flex items-center gap-1 mt-1">-->
+<!--                    <TrendingUp className="h-3 w-3" />-->
+<!--                    +12% from last month-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--                <div className="p-3 bg-primary/10 rounded-xl">-->
+<!--                  <BarChart3 className="h-6 w-6 text-primary" />-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </CardContent>-->
+<!--          </Card>-->
+
+<!--          <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">-->
+<!--            <CardContent className="p-6">-->
+<!--              <div className="flex items-center justify-between">-->
+<!--                <div>-->
+<!--                  <p className="text-muted-foreground text-sm font-medium">Applications</p>-->
+<!--                  <p className="text-3xl font-bold text-info">{totalApplications.toLocaleString()}</p>-->
+<!--                  <p className="text-xs text-success font-medium flex items-center gap-1 mt-1">-->
+<!--                    <TrendingUp className="h-3 w-3" />-->
+<!--                    +8% this week-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--                <div className="p-3 bg-info/10 rounded-xl">-->
+<!--                  <Users className="h-6 w-6 text-info" />-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </CardContent>-->
+<!--          </Card>-->
+
+<!--          <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">-->
+<!--            <CardContent className="p-6">-->
+<!--              <div className="flex items-center justify-between">-->
+<!--                <div>-->
+<!--                  <p className="text-muted-foreground text-sm font-medium">Approval Rate</p>-->
+<!--                  <p className="text-3xl font-bold text-success">{avgApprovalRate.toFixed(1)}%</p>-->
+<!--                  <p className="text-xs text-success font-medium flex items-center gap-1 mt-1">-->
+<!--                    <TrendingUp className="h-3 w-3" />-->
+<!--                    +2.1% improvement-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--                <div className="p-3 bg-success/10 rounded-xl">-->
+<!--                  <TrendingUp className="h-6 w-6 text-success" />-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </CardContent>-->
+<!--          </Card>-->
+
+<!--          <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">-->
+<!--            <CardContent className="p-6">-->
+<!--              <div className="flex items-center justify-between">-->
+<!--                <div>-->
+<!--                  <p className="text-muted-foreground text-sm font-medium">Avg Rate</p>-->
+<!--                  <p className="text-3xl font-bold text-accent">{avgInterestRate.toFixed(2)}%</p>-->
+<!--                  <p className="text-xs text-destructive font-medium flex items-center gap-1 mt-1">-->
+<!--                    <TrendingDown className="h-3 w-3" />-->
+<!--                    -0.3% from last quarter-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--                <div className="p-3 bg-accent/10 rounded-xl">-->
+<!--                  <DollarSign className="h-6 w-6 text-accent" />-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </CardContent>-->
+<!--          </Card>-->
+<!--        </div>-->
+
+<!--        {/* Dashboard Content */}-->
+<!--        <Tabs defaultValue="overview" className="space-y-6">-->
+<!--          <TabsList className="grid w-full grid-cols-3 bg-white/50 backdrop-blur-sm">-->
+<!--            <TabsTrigger value="overview" className="flex items-center gap-2">-->
+<!--              <BarChart3 className="h-4 w-4" />-->
+<!--              Overview-->
+<!--            </TabsTrigger>-->
+<!--            <TabsTrigger value="analytics" className="flex items-center gap-2">-->
+<!--              <PieChart className="h-4 w-4" />-->
+<!--              Analytics-->
+<!--            </TabsTrigger>-->
+<!--            <TabsTrigger value="data" className="flex items-center gap-2">-->
+<!--              <Eye className="h-4 w-4" />-->
+<!--              Data Table-->
+<!--            </TabsTrigger>-->
+<!--          </TabsList>-->
+
+<!--          <TabsContent value="overview" className="space-y-6 animate-fade-in">-->
+<!--            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">-->
+<!--              {/* Interest Rates Chart */}-->
+<!--              <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl">-->
+<!--                <CardHeader>-->
+<!--                  <CardTitle className="flex items-center gap-2">-->
+<!--                    <BarChart3 className="h-5 w-5 text-primary" />-->
+<!--                    Interest Rates Comparison-->
+<!--                  </CardTitle>-->
+<!--                </CardHeader>-->
+<!--                <CardContent>-->
+<!--                  <ResponsiveContainer width="100%" height={300}>-->
+<!--                    <BarChart data={chartData}>-->
+<!--                      <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(&#45;&#45;border))" />-->
+<!--                      <XAxis dataKey="name" stroke="hsl(var(&#45;&#45;muted-foreground))" />-->
+<!--                      <YAxis stroke="hsl(var(&#45;&#45;muted-foreground))" />-->
+<!--                      <Tooltip-->
+<!--                        contentStyle={{-->
+<!--                          backgroundColor: 'hsl(var(&#45;&#45;background))',-->
+<!--                          border: '1px solid hsl(var(&#45;&#45;border))',-->
+<!--                          borderRadius: '8px'-->
+<!--                        }}-->
+<!--                      />-->
+<!--                      <Bar dataKey="rate" fill="hsl(var(&#45;&#45;primary))" radius={[4, 4, 0, 0]} />-->
+<!--                    </BarChart>-->
+<!--                  </ResponsiveContainer>-->
+<!--                </CardContent>-->
+<!--              </Card>-->
+
+<!--              {/* Applications by Lender */}-->
+<!--              <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl">-->
+<!--                <CardHeader>-->
+<!--                  <CardTitle className="flex items-center gap-2">-->
+<!--                    <PieChart className="h-5 w-5 text-info" />-->
+<!--                    Applications by Lender-->
+<!--                  </CardTitle>-->
+<!--                </CardHeader>-->
+<!--                <CardContent>-->
+<!--                  <ResponsiveContainer width="100%" height={300}>-->
+<!--                    <RechartsPieChart>-->
+<!--                      <Pie-->
+<!--                        dataKey="value"-->
+<!--                        data={pieData}-->
+<!--                        cx="50%"-->
+<!--                        cy="50%"-->
+<!--                        innerRadius={60}-->
+<!--                        outerRadius={120}-->
+<!--                        paddingAngle={5}-->
+<!--                      >-->
+<!--                        {pieData.map((entry, index) => (-->
+<!--                          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />-->
+<!--                        ))}-->
+<!--                      </Pie>-->
+<!--                      <Tooltip />-->
+<!--                    </RechartsPieChart>-->
+<!--                  </ResponsiveContainer>-->
+<!--                </CardContent>-->
+<!--              </Card>-->
+<!--            </div>-->
+<!--          </TabsContent>-->
+
+<!--          <TabsContent value="analytics" className="space-y-6 animate-fade-in">-->
+<!--            <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl">-->
+<!--              <CardHeader>-->
+<!--                <CardTitle>Approval Rate Trends</CardTitle>-->
+<!--              </CardHeader>-->
+<!--              <CardContent>-->
+<!--                <ResponsiveContainer width="100%" height={400}>-->
+<!--                  <AreaChart data={chartData}>-->
+<!--                    <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(&#45;&#45;border))" />-->
+<!--                    <XAxis dataKey="name" stroke="hsl(var(&#45;&#45;muted-foreground))" />-->
+<!--                    <YAxis stroke="hsl(var(&#45;&#45;muted-foreground))" />-->
+<!--                    <Tooltip />-->
+<!--                    <Area-->
+<!--                      type="monotone"-->
+<!--                      dataKey="approval"-->
+<!--                      stroke="hsl(var(&#45;&#45;success))"-->
+<!--                      fill="hsl(var(&#45;&#45;success))"-->
+<!--                      fillOpacity={0.3}-->
+<!--                    />-->
+<!--                  </AreaChart>-->
+<!--                </ResponsiveContainer>-->
+<!--              </CardContent>-->
+<!--            </Card>-->
+<!--          </TabsContent>-->
+
+<!--          <TabsContent value="data" className="space-y-6 animate-fade-in">-->
+<!--            {/* Enhanced Controls */}-->
+<!--            <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl">-->
+<!--              <CardContent className="p-6">-->
+<!--                <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">-->
+<!--                  <div className="flex flex-col sm:flex-row gap-3 flex-1">-->
+<!--                    <div className="relative flex-1 max-w-md">-->
+<!--                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />-->
+<!--                      <Input-->
+<!--                        placeholder="Search loans, lenders..."-->
+<!--                        value={searchTerm}-->
+<!--                        onChange={(e) => setSearchTerm(e.target.value)}-->
+<!--                        className="pl-10 bg-white/50 backdrop-blur-sm border-0 shadow-sm"-->
+<!--                      />-->
+<!--                    </div>-->
+<!--                    <Select value={filterStatus} onValueChange={setFilterStatus}>-->
+<!--                      <SelectTrigger className="w-full sm:w-40 bg-white/50 backdrop-blur-sm border-0">-->
+<!--                        <SelectValue placeholder="Status" />-->
+<!--                      </SelectTrigger>-->
+<!--                      <SelectContent>-->
+<!--                        <SelectItem value="all">All Status</SelectItem>-->
+<!--                        <SelectItem value="active">Active</SelectItem>-->
+<!--                        <SelectItem value="pending">Pending</SelectItem>-->
+<!--                        <SelectItem value="inactive">Inactive</SelectItem>-->
+<!--                      </SelectContent>-->
+<!--                    </Select>-->
+<!--                  </div>-->
+<!--                  <div className="flex gap-2">-->
+<!--                    <Button variant="outline" size="sm" className="gap-2">-->
+<!--                      <RefreshCw className="h-4 w-4" />-->
+<!--                      Refresh-->
+<!--                    </Button>-->
+<!--                    <Button onClick={downloadCSV} className="gap-2">-->
+<!--                      <FileSpreadsheet className="h-4 w-4" />-->
+<!--                      Export CSV-->
+<!--                    </Button>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </CardContent>-->
+<!--            </Card>-->
+
+<!--            {/* Enhanced Data Table */}-->
+<!--            <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-xl overflow-hidden">-->
+<!--              <div className="overflow-x-auto">-->
+<!--                <table className="w-full">-->
+<!--                  <thead>-->
+<!--                    <tr className="bg-gradient-to-r from-primary/90 to-info/90 text-white">-->
+<!--                      {[-->
+<!--                        { key: 'loan_product', label: 'Loan Product' },-->
+<!--                        { key: 'interest_rate', label: 'Rate' },-->
+<!--                        { key: 'apr_percent', label: 'APR' },-->
+<!--                        { key: 'loan_term_years', label: 'Term' },-->
+<!--                        { key: 'lender_name', label: 'Lender' },-->
+<!--                        { key: 'applications', label: 'Applications' },-->
+<!--                        { key: 'approval_rate', label: 'Approval Rate' },-->
+<!--                        { key: 'status', label: 'Status' }-->
+<!--                      ].map((column) => (-->
+<!--                        <th-->
+<!--                          key={column.key}-->
+<!--                          className="text-left py-4 px-6 font-semibold cursor-pointer hover:bg-white/10 transition-colors"-->
+<!--                          onClick={() => handleSort(column.key)}-->
+<!--                        >-->
+<!--                          <div className="flex items-center gap-1">-->
+<!--                            {column.label}-->
+<!--                            <ArrowUpDown className="h-3 w-3 opacity-60" />-->
+<!--                          </div>-->
+<!--                        </th>-->
+<!--                      ))}-->
+<!--                    </tr>-->
+<!--                  </thead>-->
+<!--                  <tbody>-->
+<!--                    {paginatedData.map((row, index) => (-->
+<!--                      <tr-->
+<!--                        key={row.id}-->
+<!--                        className="border-b border-border/50 hover:bg-primary/5 transition-colors duration-200 animate-fade-in"-->
+<!--                        style={{ animationDelay: `${index * 100}ms` }}-->
+<!--                      >-->
+<!--                        <td className="py-4 px-6">-->
+<!--                          <Badge variant="outline" className="text-primary border-primary/30 bg-primary/5">-->
+<!--                            {row.loan_product}-->
+<!--                          </Badge>-->
+<!--                        </td>-->
+<!--                        <td className="py-4 px-6 font-bold text-lg text-info">-->
+<!--                          {row.interest_rate}%-->
+<!--                        </td>-->
+<!--                        <td className="py-4 px-6 font-semibold text-success">-->
+<!--                          {row.apr_percent}%-->
+<!--                        </td>-->
+<!--                        <td className="py-4 px-6 text-accent font-medium">-->
+<!--                          {row.loan_term_years} years-->
+<!--                        </td>-->
+<!--                        <td className="py-4 px-6 font-medium">-->
+<!--                          {row.lender_name}-->
+<!--                        </td>-->
+<!--                        <td className="py-4 px-6 font-bold">-->
+<!--                          {row.applications.toLocaleString()}-->
+<!--                        </td>-->
+<!--                        <td className="py-4 px-6">-->
+<!--                          <div className="flex items-center gap-2">-->
+<!--                            <div className="flex-1 bg-muted rounded-full h-2">-->
+<!--                              <div-->
+<!--                                className="h-full bg-success rounded-full transition-all duration-500"-->
+<!--                                style={{ width: `${row.approval_rate}%` }}-->
+<!--                              />-->
+<!--                            </div>-->
+<!--                            <span className="text-sm font-medium text-success">-->
+<!--                              {row.approval_rate}%-->
+<!--                            </span>-->
+<!--                          </div>-->
+<!--                        </td>-->
+<!--                        <td className="py-4 px-6">-->
+<!--                          <Badge-->
+<!--                            variant={row.status === 'active' ? 'default' : row.status === 'pending' ? 'secondary' : 'outline'}-->
+<!--                            className={-->
+<!--                              row.status === 'active' ? 'bg-success text-white' :-->
+<!--                              row.status === 'pending' ? 'bg-accent text-white' :-->
+<!--                              'bg-muted text-muted-foreground'-->
+<!--                            }-->
+<!--                          >-->
+<!--                            {row.status.charAt(0).toUpperCase() + row.status.slice(1)}-->
+<!--                          </Badge>-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                    ))}-->
+<!--                  </tbody>-->
+<!--                </table>-->
+<!--              </div>-->
+
+<!--              {/* Pagination */}-->
+<!--              {totalPages > 1 && (-->
+<!--                <div className="flex items-center justify-between px-6 py-4 border-t">-->
+<!--                  <div className="text-sm text-muted-foreground">-->
+<!--                    Showing {(currentPage - 1) * itemsPerPage + 1} to {Math.min(currentPage * itemsPerPage, filteredAndSortedData.length)} of {filteredAndSortedData.length} results-->
+<!--                  </div>-->
+<!--                  <div className="flex gap-2">-->
+<!--                    <Button-->
+<!--                      variant="outline"-->
+<!--                      size="sm"-->
+<!--                      onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}-->
+<!--                      disabled={currentPage === 1}-->
+<!--                    >-->
+<!--                      Previous-->
+<!--                    </Button>-->
+<!--                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (-->
+<!--                      <Button-->
+<!--                        key={page}-->
+<!--                        variant={page === currentPage ? "default" : "outline"}-->
+<!--                        size="sm"-->
+<!--                        onClick={() => setCurrentPage(page)}-->
+<!--                        className="w-8 h-8 p-0"-->
+<!--                      >-->
+<!--                        {page}-->
+<!--                      </Button>-->
+<!--                    ))}-->
+<!--                    <Button-->
+<!--                      variant="outline"-->
+<!--                      size="sm"-->
+<!--                      onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}-->
+<!--                      disabled={currentPage === totalPages}-->
+<!--                    >-->
+<!--                      Next-->
+<!--                    </Button>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              )}-->
+<!--            </Card>-->
+<!--          </TabsContent>-->
+<!--        </Tabs>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  );-->
+<!--}-->
