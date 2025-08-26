@@ -2,10 +2,11 @@ name: Daily Web Scraper
 on:
   schedule:
    - cron: "20 5 * * *"   # Runs daily at 10:50 AM IST
-
   workflow_dispatch:        # allows manual trigger
+
 permissions:
-  contents: write  # :white_tick: Allow push access
+  contents: write  # ✅ Allow push access
+
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
@@ -14,30 +15,39 @@ jobs:
       uses: actions/checkout@v4
       with:
         persist-credentials: true
-        fetch-depth: 0
+        fetch-depth: 0   # ✅ full history required for push
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install scrapy
+
     - name: Run scraping script
       run: python run_all.py
+
     - name: Debug - list files after scrape
       run: |
         echo "Files after scraping:"
         find output -type f || echo "No files found"
+
     - name: Commit and push updated files
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        # Add files only if they exist
+
+        # Pull latest changes first to avoid conflicts
+        git pull --rebase origin main || true
+
+        # Add only if files exist
         for file in \
-         output/bankrate.json \
-         output/bankrate.csv \
-         output/bankrate.xlsx \
+          output/bankrate.json \
+          output/bankrate.csv \
+          output/bankrate.xlsx \
           logs/scrapy_run.log; do
           if [ -f "$file" ]; then
             git add "$file"
@@ -45,14 +55,8 @@ jobs:
             echo "File not found: $file"
           fi
         done
+
         git commit -m "Update scraped data $(date '+%Y-%m-%d %H:%M:%S') [skip ci]" || echo "No changes to commit"
-        git push
 
-
-
-
-
-
-
-
-
+        # Push after rebase
+        git push origin main
