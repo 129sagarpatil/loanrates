@@ -57,7 +57,7 @@ jobs:
         done
 
         git commit -m "Update scraped data $(date '+%Y-%m-%d %H:%M:%S') [skip ci]" || echo "No changes to commit"
-<<<<<<< HEAD
+
         git push
 
 
@@ -70,8 +70,6 @@ jobs:
 
 
 
-=======
->>>>>>> 7e1bfaeee2d2537615582ae5f40667cdd94001b4
 
-        # Push after rebase
-        git push origin main
+
+
