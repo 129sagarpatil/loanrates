@@ -1,7 +1,8 @@
 name: Daily Web Scraper
 on:
   schedule:
-    - cron: '30 3 * * *'  # Runs daily at 9:00 AM IST
+   - cron: "20 5 * * *"   # Runs daily at 10:50 AM IST
+
   workflow_dispatch:        # allows manual trigger
 permissions:
   contents: write  # :white_tick: Allow push access
@@ -34,9 +35,9 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         # Add files only if they exist
         for file in \
-          output/bankrate.json \
-          output/bankrate.csv \
-          output/bankrate.xlsx \
+         loanrates/output/bankrate.json \
+         loanrates/output/bankrate.csv \
+         loanrates/output/bankrate.xlsx \
           logs/scrapy_run.log; do
           if [ -f "$file" ]; then
             git add "$file"
