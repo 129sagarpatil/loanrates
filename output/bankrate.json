@@ -5,61 +5,61 @@
     "apr": "6.40%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2025-10-10",
+    "updated_date": "2025-10-11",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "20-Year Fixed Rate",
-    "interest_rate": "5.94%",
-    "apr": "6.03%",
+    "interest_rate": "5.97%",
+    "apr": "6.06%",
     "loan_term_years": "20",
     "lender_name": "Bankrate",
-    "updated_date": "2025-10-10",
+    "updated_date": "2025-10-11",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "15-Year Fixed Rate",
-    "interest_rate": "5.57%",
-    "apr": "5.67%",
+    "interest_rate": "5.60%",
+    "apr": "5.70%",
     "loan_term_years": "15",
     "lender_name": "Bankrate",
-    "updated_date": "2025-10-10",
+    "updated_date": "2025-10-11",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "10-Year Fixed Rate",
-    "interest_rate": "5.49%",
-    "apr": "5.57%",
+    "interest_rate": "5.57%",
+    "apr": "5.64%",
     "loan_term_years": "10",
     "lender_name": "Bankrate",
-    "updated_date": "2025-10-10",
+    "updated_date": "2025-10-11",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate FHA",
-    "interest_rate": "5.91%",
-    "apr": "5.96%",
+    "interest_rate": "6.40%",
+    "apr": "6.46%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2025-10-10",
+    "updated_date": "2025-10-11",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate VA",
-    "interest_rate": "6.09%",
-    "apr": "6.13%",
+    "interest_rate": "6.41%",
+    "apr": "6.45%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2025-10-10",
+    "updated_date": "2025-10-11",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate Jumbo",
-    "interest_rate": "6.47%",
-    "apr": "6.52%",
+    "interest_rate": "6.46%",
+    "apr": "6.50%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2025-10-10",
+    "updated_date": "2025-10-11",
     "mortgageType": "Purchase"
 }
 ]
