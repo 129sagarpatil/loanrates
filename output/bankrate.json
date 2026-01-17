@@ -2,55 +2,55 @@
 {
     "loan_product": "30-Year Fixed Rate",
     "interest_rate": "6.11%",
-    "apr": "6.17%",
+    "apr": "6.18%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-16",
+    "updated_date": "2026-01-17",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "20-Year Fixed Rate",
-    "interest_rate": "5.85%",
-    "apr": "5.94%",
+    "interest_rate": "5.87%",
+    "apr": "5.95%",
     "loan_term_years": "20",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-16",
+    "updated_date": "2026-01-17",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "15-Year Fixed Rate",
-    "interest_rate": "5.45%",
-    "apr": "5.55%",
+    "interest_rate": "5.47%",
+    "apr": "5.56%",
     "loan_term_years": "15",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-16",
+    "updated_date": "2026-01-17",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "10-Year Fixed Rate",
     "interest_rate": "5.32%",
-    "apr": "5.39%",
+    "apr": "5.40%",
     "loan_term_years": "10",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-16",
+    "updated_date": "2026-01-17",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate FHA",
-    "interest_rate": "5.64%",
-    "apr": "5.69%",
+    "interest_rate": "5.78%",
+    "apr": "5.82%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-16",
+    "updated_date": "2026-01-17",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate VA",
-    "interest_rate": "6.14%",
-    "apr": "6.19%",
+    "interest_rate": "6.26%",
+    "apr": "6.30%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-16",
+    "updated_date": "2026-01-17",
     "mortgageType": "Purchase"
 },
 {
@@ -59,7 +59,7 @@
     "apr": "6.45%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-16",
+    "updated_date": "2026-01-17",
     "mortgageType": "Purchase"
 }
 ]
