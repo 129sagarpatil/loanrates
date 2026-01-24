@@ -2,28 +2,28 @@
 {
     "loan_product": "30-Year Fixed Rate",
     "interest_rate": "6.20%",
-    "apr": "6.26%",
+    "apr": "6.27%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-23",
+    "updated_date": "2026-01-24",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "20-Year Fixed Rate",
-    "interest_rate": "5.92%",
-    "apr": "6.00%",
+    "interest_rate": "5.99%",
+    "apr": "6.07%",
     "loan_term_years": "20",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-23",
+    "updated_date": "2026-01-24",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "15-Year Fixed Rate",
-    "interest_rate": "5.55%",
-    "apr": "5.66%",
+    "interest_rate": "5.57%",
+    "apr": "5.67%",
     "loan_term_years": "15",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-23",
+    "updated_date": "2026-01-24",
     "mortgageType": "Purchase"
 },
 {
@@ -32,34 +32,34 @@
     "apr": "5.60%",
     "loan_term_years": "10",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-23",
+    "updated_date": "2026-01-24",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate FHA",
-    "interest_rate": "5.87%",
-    "apr": "5.91%",
+    "interest_rate": "5.92%",
+    "apr": "5.97%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-23",
+    "updated_date": "2026-01-24",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate VA",
-    "interest_rate": "6.35%",
-    "apr": "6.40%",
+    "interest_rate": "6.38%",
+    "apr": "6.42%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-23",
+    "updated_date": "2026-01-24",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate Jumbo",
-    "interest_rate": "6.46%",
-    "apr": "6.51%",
+    "interest_rate": "6.44%",
+    "apr": "6.48%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-01-23",
+    "updated_date": "2026-01-24",
     "mortgageType": "Purchase"
 }
 ]
