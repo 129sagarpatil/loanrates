@@ -2,64 +2,64 @@
 {
     "loan_product": "30-Year Fixed Rate",
     "interest_rate": "6.52%",
-    "apr": "6.59%",
+    "apr": "6.58%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-06-03",
+    "updated_date": "2026-06-04",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "20-Year Fixed Rate",
-    "interest_rate": "6.36%",
-    "apr": "6.45%",
+    "interest_rate": "6.32%",
+    "apr": "6.41%",
     "loan_term_years": "20",
     "lender_name": "Bankrate",
-    "updated_date": "2026-06-03",
+    "updated_date": "2026-06-04",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "15-Year Fixed Rate",
-    "interest_rate": "5.91%",
-    "apr": "6.00%",
+    "interest_rate": "5.89%",
+    "apr": "5.99%",
     "loan_term_years": "15",
     "lender_name": "Bankrate",
-    "updated_date": "2026-06-03",
+    "updated_date": "2026-06-04",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "10-Year Fixed Rate",
-    "interest_rate": "5.85%",
-    "apr": "5.95%",
+    "interest_rate": "5.81%",
+    "apr": "5.91%",
     "loan_term_years": "10",
     "lender_name": "Bankrate",
-    "updated_date": "2026-06-03",
+    "updated_date": "2026-06-04",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate FHA",
-    "interest_rate": "6.46%",
+    "interest_rate": "6.45%",
     "apr": "6.51%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-06-03",
+    "updated_date": "2026-06-04",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate VA",
-    "interest_rate": "6.53%",
-    "apr": "6.58%",
+    "interest_rate": "6.49%",
+    "apr": "6.55%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-06-03",
+    "updated_date": "2026-06-04",
     "mortgageType": "Purchase"
 },
 {
     "loan_product": "30-Year Fixed Rate Jumbo",
-    "interest_rate": "6.69%",
-    "apr": "6.73%",
+    "interest_rate": "6.71%",
+    "apr": "6.75%",
     "loan_term_years": "30",
     "lender_name": "Bankrate",
-    "updated_date": "2026-06-03",
+    "updated_date": "2026-06-04",
     "mortgageType": "Purchase"
 }
 ]
