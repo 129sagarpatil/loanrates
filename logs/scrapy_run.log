@@ -7631,3 +7631,18 @@ ModuleNotFoundError: No module named 'pandas'
 2026-10-20 10:08:07,508 - INFO - One or more transformation steps failed.
 2026-10-20 10:08:07,508 - INFO - Job ended at: 2026-10-20 10:08:07
 2026-10-20 10:08:07,508 - INFO - ==================================================
+2026-10-21 10:15:01,013 - INFO - Job started at: 2026-10-21 10:15:01
+2026-10-21 10:15:01,013 - INFO - ===  Starting Full Scrapy → CSV → XLSX Job ===
+2026-10-21 10:15:01,013 - INFO - Running: Scrapy Spider in /home/runner/work/loanrates/loanrates
+2026-10-21 10:15:04,531 - INFO - Scrapy Spider completed successfully.
+2026-10-21 10:15:04,531 - INFO - Running: JSON to CSV in /home/runner/work/loanrates/loanrates
+2026-10-21 10:15:04,548 - INFO - JSON to CSV completed successfully.
+2026-10-21 10:15:04,548 - INFO - Running: JSON to XLSX in /home/runner/work/loanrates/loanrates
+2026-10-21 10:15:04,562 - ERROR - JSON to XLSX failed.
+2026-10-21 10:15:04,562 - ERROR - Traceback (most recent call last):
+  File "/home/runner/work/loanrates/loanrates/json_to_xlsx.py", line 3, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+2026-10-21 10:15:04,562 - INFO - One or more transformation steps failed.
+2026-10-21 10:15:04,562 - INFO - Job ended at: 2026-10-21 10:15:04
+2026-10-21 10:15:04,562 - INFO - ==================================================
